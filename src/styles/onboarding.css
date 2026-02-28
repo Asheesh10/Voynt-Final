@@ -1,0 +1,246 @@
+/* ONBOARDING */
+body.onboarding {
+    background: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 100px 20px 40px;
+}
+
+.ob-logo {
+    position: fixed;
+    top: 28px;
+    left: 40px;
+    z-index: 50;
+    font-family: 'BL Melody', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+    cursor: none;
+}
+
+.ob-logo .ln {
+    color: var(--beauty);
+}
+
+.step-tracker {
+    position: fixed;
+    top: 32px;
+    right: 40px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.st-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(151, 198, 177, .15);
+    border: 1px solid rgba(151, 198, 177, .2);
+    transition: all .35s;
+}
+
+.st-dot.active {
+    background: var(--beauty);
+    border-color: var(--beauty);
+    box-shadow: 0 0 8px rgba(98, 159, 134, .5);
+}
+
+.st-dot.done {
+    background: rgba(98, 159, 134, .4);
+    border-color: rgba(98, 159, 134, .4);
+}
+
+.ob-wrap {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 560px;
+}
+
+.ob-step {
+    display: none;
+}
+
+.ob-step.active {
+    display: block;
+    animation: stepIn .4s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+.ob-eyebrow {
+    font-size: 9px;
+    color: rgba(98, 159, 134, .45);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.ob-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--beauty);
+    opacity: .5;
+}
+
+.ob-title {
+    font-family: 'BL Melody', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 40px);
+    letter-spacing: -.03em;
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.ob-title .accent {
+    color: var(--beauty);
+}
+
+.ob-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(151, 198, 177, .4);
+    line-height: 1.65;
+    margin-bottom: 32px;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.city-preview {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(98, 159, 134, .06);
+    border: 1px solid rgba(98, 159, 134, .15);
+    border-radius: 8px;
+    align-items: center;
+    gap: 12px;
+}
+
+.city-icon {
+    font-size: 20px;
+}
+
+.city-label-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--pale);
+}
+
+.city-sub {
+    font-size: 9px;
+    color: rgba(151, 198, 177, .35);
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.btn-hero-ob {
+    flex: 1;
+    background: var(--beauty);
+    color: var(--white);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: none;
+    transition: background .25s, box-shadow .25s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-ob:hover {
+    background: var(--pale);
+    box-shadow: 0 10px 28px rgba(98, 159, 134, .3);
+}
+
+.btn-hero-ob .arrow {
+    transition: transform .2s;
+}
+
+.btn-hero-ob:hover .arrow {
+    transform: translateX(4px);
+}
+
+.btn-back-ob {
+    background: transparent;
+    border: 1px solid rgba(151, 198, 177, .15);
+    color: rgba(151, 198, 177, .5);
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    cursor: none;
+    transition: all .2s;
+    flex: 0 0 auto;
+}
+
+.btn-back-ob:hover {
+    border-color: rgba(98, 159, 134, .4);
+    color: var(--pale);
+}
+
+.ob-progress {
+    height: 2px;
+    background: rgba(151, 198, 177, .08);
+    border-radius: 1px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.ob-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--beauty), var(--pale));
+    border-radius: 1px;
+    transition: width .5s cubic-bezier(.4, 0, .2, 1);
+}
+
+@media(max-width:520px) {
+    .ob-wrap {
+        padding: 0;
+    }
+
+    .ob-logo {
+        left: 20px;
+        top: 20px;
+    }
+
+    .step-tracker {
+        right: 20px;
+        top: 24px;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+}

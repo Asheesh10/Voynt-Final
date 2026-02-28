@@ -1,0 +1,105 @@
+/* HOW IT WORKS PAGE */
+body.hiw-page {
+    background: var(--white);
+    color: var(--black);
+}
+
+.hiw-page-hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 160px 72px 80px;
+    background: var(--white);
+}
+
+.hiw-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    color: var(--beauty);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.hiw-page-eyebrow::before,
+.hiw-page-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--beauty);
+    opacity: .6;
+}
+
+.hiw-page-title {
+    font-family: 'BL Melody', sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--black);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hiw-page-title span {
+    color: var(--beauty);
+}
+
+.hiw-page-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--storm);
+    max-width: 500px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.hiw-section {
+    background: var(--black);
+    padding: 120px 72px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hiw-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(98, 159, 134, .1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-section {
+    background: var(--white);
+    padding: 80px 72px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.cta-section h2 {
+    font-family: 'BL Melody', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--black);
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+}
+
+.cta-section h2 span {
+    color: var(--beauty);
+}
+
+.cta-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--storm);
+    margin-bottom: 32px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
