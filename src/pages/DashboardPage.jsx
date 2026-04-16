@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useVoynt } from '../context/VoyntContext';
 import { supabase } from '../lib/supabase';
 import { pollStatus, getResults } from '../lib/api';
+import FeatureGraph from '../components/FeatureGraph';
 import '../styles/dashboard.css';
 
 /* ─── Constants ──────────────────────────────────────────────────────────── */
@@ -403,6 +404,18 @@ export default function DashboardPage() {
                                 </>
                             )}
                         </div>
+                    </div>
+
+                    {/* ── Feature Graph ── */}
+                    <div className="panel" style={{ marginTop: 20 }}>
+                        <div className="panel-header">
+                            <div className="panel-title">Expenditure Graph Topology</div>
+                            <div className="panel-badge">Live</div>
+                        </div>
+                        <FeatureGraph 
+                            spend={50000} 
+                            cards={cardsOwned.map(c => typeof c === 'string' ? c : c.name)} 
+                        />
                     </div>
 
                     {/* History table — only when 2+ runs exist */}
